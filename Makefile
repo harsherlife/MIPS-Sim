@@ -2,8 +2,8 @@
 
 build:
 	mkdir -p builds
-	odin build src/ -out:builds/mips-simulator
-
-
+	odin build src/simulator -out:builds/mips-simulator
+	odin build src/assembler -out:builds/mips-assembler
 run: build
-	builds/mips-simulator examples/test.s
+	builds/mips-assembler examples/test.s
+	builds/mips-simulator examples/test.object

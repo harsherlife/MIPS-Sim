@@ -3,6 +3,7 @@ package main;
 
 import "core:os";
 import "core:fmt";
+import "../common";
 
 Cpu :: struct
 {
@@ -26,7 +27,7 @@ main :: proc()
 {
     if len(os.args) < 2
     {
-        errorf("file name not provided for machine code\n");
+        common.errorf("file name not provided for machine code\n");
     }
     cpu := Cpu{};
     mem : Mem = ---;
